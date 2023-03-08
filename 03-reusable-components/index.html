@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin defer src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+                                           <!--react-dom permite inserir a logica na div -->
+    <script crossorigin defer src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script defer src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <script type="text/babel" src="Card.js"></script>
+    <title>03-reusable-components</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">         
+       const dogs = [
+            { name: " Corgi", image: "https://images.dog.ceo/breeds/affenpinscher/n02110627_946.jpg"},
+            { name: " German Shepherd", image: "https://images.dog.ceo/breeds/germanshepherd/Hannah.jpg"},
+            { name: "Akita", image: "https://images.dog.ceo/breeds/akita/512px-Akita_inu.jpg"},
+        ]
+        ReactDOM.render(
+            <div>
+                <Card name={dogs[0].name} image={dogs[0].image}/>, 
+                <Card name={dogs[1].name} image={dogs[1].image}/>, 
+                <Card name={dogs[2].name} image={dogs[2].image}/>, 
+            </div>,
+            document.getElementById("root"));
+
+            
+        // ReactDOM.render(<Card name={dogs[1].name} image={dogs[1].image}/>, document.getElementById("root") )
+        // ReactDOM.render(<Card name={dogs[2].name} image={dogs[2].image}/>, document.getElementById("root") )
+        // ReactDOM.render(<Card/>, document.getElementById("root"))
+    </script>
+</body>
+</html>
